@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useParams } from "react-router-dom";
 export const GET_POKEMON = "GET_POKEMON";
 export const GET_TYPES = "GET_TYPES";
 export const ORDER_NAME = "ORDER_NAME";
@@ -115,7 +114,6 @@ console.log("un name", name);
   
       return dispatch({
         type: GET_NAME_POKEMON,
-        // payload: pokeFinal[0]
         payload: pokemonFinal
       });
     } catch (err) {
@@ -123,6 +121,8 @@ console.log("un name", name);
     }
   };
 }
+
+let idPoke = 1000;
 
 export function postPokemon(payload) {
   return async function (dispatch) {

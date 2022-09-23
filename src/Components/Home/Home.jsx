@@ -6,10 +6,13 @@ import Page from "../Page/Page";
 import loading from "../../assets/poke.gif";
 import Card from "../Card/Card";
 import SearchBar from "../SearchBar/SearchBar";
+ import Create from '../Create/Create'
 
 function Home() {
   const dispatch = useDispatch();
   const pokemons = useSelector((state) => state.pokemons);
+
+
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pokemonsPerPage, setPokemonsPerPage] = useState(10);
@@ -25,6 +28,8 @@ function Home() {
   useEffect(() => {
     dispatch(getPokemon());
   }, []);
+
+
 
   const [orden, setOrden] = useState("");
 
@@ -61,7 +66,9 @@ function Home() {
           <p>Loading...</p>
         </div>
       )}
-
+      <Create
+            />
+     
       <div className="contentWrapper">
         {currentPokemons?.map((v) => {
           return (
