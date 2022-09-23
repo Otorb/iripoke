@@ -1,0 +1,63 @@
+.home {
+    background-image: url("../images/uno.webp");
+    background-size: cover;
+    background-position: center;
+    margin-top: -50px;
+  }
+  
+  .contentWrapper {
+    padding: 15px;
+    grid-gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 15rem);
+    justify-content: center;
+  }
+  
+  .tuclase{
+    font-size: 70px;
+    color: transparent;
+    background-color: #3214dc;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 25px, rgba(255, 255, 255, .5) 25px, rgba(255, 255, 255, .5) 50px);    
+    background-clip: text;
+    animation: color 50s linear infinite;
+    background-size: 200%;    
+  }
+  
+  @keyframes color {
+    from {
+        background-position: 0% 50%;
+    }
+  
+    to {
+        background-position: 100% 50%;
+    }
+  }
+  
+  
+  
+  .desapare {
+    -moz-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 3s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 3s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    margin-right: 25%;
+  }
+  @keyframes cssAnimation {
+    to {
+      width: 0;
+      height: 0;
+      overflow: hidden;
+    }
+  }
+  @-webkit-keyframes cssAnimation {
+    to {
+      width: 0;
+      height: 0;
+      visibility: hidden;
+    }
+  }
