@@ -75,7 +75,7 @@ function Create() {
             img: "",
             types: [],
           });
-          navigate("/home");
+          navigate("/");
         }
       }
   return (

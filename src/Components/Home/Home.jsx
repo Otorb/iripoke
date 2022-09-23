@@ -6,7 +6,7 @@ import Page from "../Page/Page";
 import loading from "../../assets/poke.gif";
 import Card from "../Card/Card";
 import SearchBar from "../SearchBar/SearchBar";
- import Create from '../Create/Create'
+
 
 function Home() {
   const dispatch = useDispatch();
@@ -29,8 +29,8 @@ function Home() {
     dispatch(getPokemon());
   }, []);
 
-
-
+  let createPokemon = useSelector((state) => state.createPokemon);
+console.log(createPokemon)
   const [orden, setOrden] = useState("");
 
   function handlerSort(e) {
@@ -39,6 +39,12 @@ function Home() {
     setCurrentPage(1);
     setOrden(`Ordenado ${e.target.value}`);
   }
+  // let pokeNew
+  // if(createPokemon.length === 1){
+  //    pokeNew =  [createPokemon]
+  //   createPokemon = pokeNew 
+   
+  // }
 
   return (
     <div>
@@ -66,8 +72,22 @@ function Home() {
           <p>Loading...</p>
         </div>
       )}
-      <Create
-            />
+       
+      
+       {createPokemon?.length === 1 ?
+                <div>
+                  <Card
+              id={createPokemon[0].id}
+              key={createPokemon[0].id}
+              name={createPokemon[0].name}
+              img={createPokemon[0].img}
+              types={createPokemon[0].types}
+               
+                />
+                </div>
+                
+         
+          : null}
      
       <div className="contentWrapper">
         {currentPokemons?.map((v) => {

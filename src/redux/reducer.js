@@ -11,6 +11,7 @@ import {
 
 const initialState = {
   pokemons: [],
+  createPokemon:[],
   allPokemon: [],
   types: [],
   detail: {},
@@ -84,8 +85,10 @@ function reducer(state = initialState, action) {
           };
         }
     case POST_POKEMON:
+     let pokeCrea = [...state.createPokemon, action.payload]
       return {
         ...state,
+        createPokemon: pokeCrea
       };
 
     default:

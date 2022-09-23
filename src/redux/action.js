@@ -125,11 +125,15 @@ console.log("un name", name);
 let idPoke = 1000;
 
 export function postPokemon(payload) {
-  return async function (dispatch) {
-    const json = await axios.post("http://localhost:3001/pokemons", payload);
+  return {
+   type: POST_POKEMON,
+   payload
+  }
+
+
     // return json;
   };
-}
+
 
 export function orderName(payload) {
   return {
